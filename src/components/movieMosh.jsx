@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
-import  { getMovieList } from '../services/fakeMovieService'
+import Like from './common/like'
+import Pagination from './common/pagination'
+import  { getMovieList,likeMovie } from '../services/fakeMovieService'
 
 class Movies extends Component {
     state = { 
-        movies: getMovieList()
+        movies: getMovieList(),
+        pageSize: 4
     }
 
     handleClick = (movie) => {
         console.log(movie)
         const movies = this.state.movies.filter(m => m._id !== movie._id)
         this.setState({movies})
+    }
+
+    handleLike = (movie) => {
+        likeMovie(movie._id).then((movies) => {
+            this.setState({
+                movies
+            })
+        })
+    }
+
+    handlePageChange = page => {
+        console.log(page)
     }
 
     render() { 
@@ -36,12 +51,14 @@ class Movies extends Component {
                                     <td>{movie.genre.name}</td>
                                     <td>{movie.numberInStock}</td>
                                     <td>{movie.dailyRentalRate}</td>
+                                    <td><Like onLike={this.handleLike} movie={movie} /></td>
                                     <td><button onClick={() => this.handleClick(movie)} className="btn btn-danger btn-sm">Delete</button></td>
                                 </tr>
                             )
                         )}
                     </tbody>
                 </table>
+                <Pagination itemsCount={count} pageSize={this.state.pageSize} onPageChange={this.handlePageChange} />
             </React.Fragment>  
         );
     }
