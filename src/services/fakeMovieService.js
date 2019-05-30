@@ -12,8 +12,8 @@ const movies = [
     },
     {
         _id: "73213hiushdsak12321231h3iu2",
-        title: "Terminator",
-        genre: { _id: "73213hiushdsak12321231h3iu2", name: 'Action' },
+        title: "Avantar",
+        genre: { _id: "73213hiushdsak12321231h3iu2", name: 'Fiction' },
         numberInStock: 6,
         dailyRentalRate: 2.5,
         publishDate: "2018-0103T19:04:25.809Z",
@@ -21,7 +21,7 @@ const movies = [
     },
     {
         _id: "73213hiushdsak12321231h3iu3",
-        title: "Terminator",
+        title: "Die Hard",
         genre: { _id: "73213hiushdsak12321231h3iu3", name: 'Action' },
         numberInStock: 6,
         dailyRentalRate: 2.5,
@@ -30,8 +30,8 @@ const movies = [
     },
     {
         _id: "73213hiushdsak12321231h3iu4",
-        title: "Terminator",
-        genre: { _id: "73213hiushdsak12321231h3iu4", name: 'Action' },
+        title: "Arogant and Prejudice",
+        genre: { _id: "73213hiushdsak12321231h3iu4", name: 'Art' },
         numberInStock: 6,
         dailyRentalRate: 2.5,
         publishDate: "2018-0103T19:04:25.809Z",
